@@ -1,0 +1,16 @@
+<!doctype html5>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+  {{ partial "head" . }}
+  <body>
+    {{ partial "header" . }}
+      <div class="container">
+        <main role="main" class="article-list">
+          <h1 class="list-title">{{ .Title }}</h1>
+          {{ range .Data.Pages }}
+            {{ partial "article-list-item.html" . }}
+          {{ end }}
+        </main>
+      </div>
+    {{ partial "footer" . }}
+  </body>
+</html>

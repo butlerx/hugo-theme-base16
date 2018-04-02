@@ -1,0 +1,11 @@
+<!doctype html5>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+  {{ partial "head" . }}
+  <body>
+    {{ partial "header" . }}
+    <div class="container">
+      {{ block "main" . }}{{ end }}
+    </div>
+    {{ partial "footer" . }}
+  </body>
+</html>
