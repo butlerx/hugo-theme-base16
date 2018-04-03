@@ -1,0 +1,29 @@
+{{ define "main" }}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+<script src="{{ "js/search.js" | absURL }}"></script>
+<main role="main" class="article-list">
+  <span class="search">
+    <h1 class="list-title">{{ .Title }}</h1>
+    <form action="{{ "search" | absURL }}">
+      <input id="search-query" name="s" class="search-box"/>
+    </form>
+  </span>
+  <h1 class="list-title">Matching pages</h1>
+  <div id="search-results" class="article-list"></div>
+</main>
+<!-- this template is sucked in by search.js and appended to the search-results div above. So editing here will adjust style -->
+<script id="search-result-template" type="text/x-js-template">
+<article id="summary-${key}" class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="${link}">${title}</a></h2>
+  <div class="meta">
+    ${ isset tags }<br><span class="key">Tags:</span><span class="val"> ${tags}</span>${ end }
+    ${ isset categories }<br><span class="key">Categories:</span><span class="val"> ${categories}</span>${ end }
+    ${ isset date }<br><span class="key">published on:</span><span class="val"> <time itemprop="datePublished" datetime="${ date }">${dateFmt}</time></span>${ end }
+    ${ isset author }<br><span class="key">author:</span> <span class="val">${author}</span>${ end }
+  </div>
+  <section class="summary">${snippet}</section>
+</article>
+</script>
+{{ end }}
