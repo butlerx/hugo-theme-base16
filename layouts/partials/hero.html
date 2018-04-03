@@ -1,6 +1,12 @@
-{{ $baseurl := .Site.BaseURL }}
+{{- $baseurl := .Site.BaseURL -}}
+
 <h1 class="site-title">
-  <span class="base05">[</span><span class="base08">r</span><span class="base09">o</span><span class="base0a">o</span><span class="base0b">t</span><span class="base05">]</span><span class="base05"># _</span>
+  <span class="base05">[</span>
+  {{- $colour := split "3,4,5,6,7,8,9,a,b,c,d,e" "," -}}
+  {{- range $index, $element := split .Site.Params.Hero "" -}}
+    <span class="base0{{- index $colour (mod $index (len $colour)) -}}">{{- $element -}}</span>
+  {{- end -}}
+<span class="base05">]</span><span class="base05">#_</span>
 </h1>
 
 <div class="hero-logo">

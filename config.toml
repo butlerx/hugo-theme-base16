@@ -2,3 +2,6 @@ baseURL = "https://admin.redbrick.dcu.ie/"
 languageCode = "en-us"
 title = "Redbrick Admin Blog"
 author = "Redbrick Admin"
+pygmentsCodeFences = true
+[params]
+  hero = "root@redbrick"
