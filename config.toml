@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "Redbrick Admin Blog"
 author = "Redbrick Admin"
 pygmentsCodeFences = true
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
