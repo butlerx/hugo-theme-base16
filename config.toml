@@ -10,3 +10,5 @@ pygmentsCodeFences = true
 [params]
   hero = "root@rb"
   message = "FIX IT!!! FIX IT !!! FIX ITTTTTT!!!!!!!!!"
+  descriptions = "Tales of fail from Redbrick admins"
+  twitter = "RedbrickDCU"
