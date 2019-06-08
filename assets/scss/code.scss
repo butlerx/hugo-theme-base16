@@ -1,0 +1,90 @@
+pre {
+  background: base('00');
+  color: base('07');
+}
+
+.highlight {
+  .hll {
+    background-color: base('02');
+  }
+  @each $lang,
+    $base
+      in (
+        'bp': '07',
+        'c': '03',
+        'c1': '03',
+        'cm': '03',
+        'cp': '03',
+        'cs': '03',
+        'err': '08',
+        'gd': '08',
+        'gh': '07',
+        'gi': '0b',
+        'gp': '03',
+        'gu': '0c',
+        'il': '09',
+        'k': '0e',
+        'kc': '0e',
+        'kd': '0e',
+        'kn': '0c',
+        'kp': '0e',
+        'kr': '0e',
+        'kt': '0a',
+        'l': '09',
+        'ld': '0b',
+        'm': '09',
+        'mf': '09',
+        'mh': '09',
+        'mi': '09',
+        'mo': '09',
+        'n': '07',
+        'na': '0d',
+        'nb': '07',
+        'nc': '0a',
+        'nd': '0c',
+        'ne': '08',
+        'nf': '0d',
+        'ni': '07',
+        'nl': '07',
+        'nn': '0a',
+        'no': '08',
+        'nt': '0c',
+        'nv': '08',
+        'nx': '0d',
+        'o': '0c',
+        'ow': '0c',
+        'p': '07',
+        'py': '07',
+        's': '0b',
+        's1': '0b',
+        's2': '0b',
+        'sb': '0b',
+        'sc': '07',
+        'sd': '03',
+        'se': '09',
+        'sh': '0b',
+        'si': '09',
+        'sr': '0b',
+        'ss': '0b',
+        'sx': '0b',
+        'vc': '08',
+        'vg': '08',
+        'vi': '08',
+        'w': '07'
+      )
+  {
+    .#{$lang} {
+      color: base($base);
+    }
+  }
+
+  .ge {
+    font-style: italic;
+  }
+
+  @each $lang in gh, gp, gs, gu {
+    .#{$lang} {
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,178 @@
+@import 'articleList';
+
+@mixin highlight {
+  @include responsive;
+  @include margin($bottom: 1rem, $left: -8rem, $right: -8rem);
+  background-color: base('01');
+  box-sizing: border-box;
+  padding: 1em;
+  width: 52rem;
+  @media (breakpoint-md) {
+    @include margin($left: 0, $right: 0);
+    border-radius: 3px;
+  }
+}
+
+@mixin tableCell {
+  border-bottom: 1px solid base('04');
+  line-height: inherit;
+  padding: 0.25rem 1rem;
+}
+
+// Post List Layout
+article {
+  &.single {
+    .meta {
+      font-size: 0.9em;
+      text-align: right;
+
+      .key {
+        color: base('03');
+      }
+
+      .val {
+        color: base('0e');
+
+        a {
+          color: base('0e');
+        }
+      }
+    }
+
+    h1 {
+      &.headline {
+        color: base('0a');
+        font-size: 3em;
+        margin-top: 0;
+      }
+    }
+
+    section {
+      @include articleLayout;
+
+      &.body {
+        @include padding($bottom: 3rem, $top: 4rem);
+        @each $prop,
+          $color
+            in (
+              'h1': base('0d'),
+              'h2': base('0b'),
+              'h3': base('09'),
+              'h4': base('08'),
+              'h5': base('02'),
+              'h6': base('03'),
+              'a': base('0f')
+            )
+        {
+          #{$prop} {
+            color: $color;
+          }
+        }
+      }
+    }
+
+    * {
+      max-width: 100%;
+    }
+
+    pre {
+      @include margin($bottom: 1rem, $top: 0);
+      border-radius: 3px;
+      overflow-x: auto;
+      padding: 2rem;
+    }
+
+    p {
+      code {
+        background: base('03');
+        border-radius: 3px;
+        color: base('07');
+        padding: 0.2em 0.5em;
+      }
+    }
+
+    div {
+      &.highlight {
+        @include highlight;
+      }
+    }
+
+    figure {
+      @include highlight;
+
+      img {
+        border-radius: 3px;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      figcaption {
+        margin-top: 1rem;
+
+        h4 {
+          color: base('07');
+          font-style: italic;
+          font-weight: normal;
+          margin-top: 0;
+          text-align: center;
+        }
+      }
+    }
+
+    table {
+      border-collapse: separate;
+      border-spacing: 0;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    tr {
+      &:last-child {
+        td {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    th {
+      @include tableCell;
+      font-weight: bold;
+      text-align: left;
+      vertical-align: bottom;
+    }
+
+    td {
+      @include tableCell;
+      vertical-align: top;
+    }
+
+    blockquote {
+      @include margin($left: 2rem, $right: 3rem);
+      border-left: 5px solid base('0c');
+      padding-left: 1rem;
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1px solid base('04');
+    }
+
+    @media (breakpoint-md) {
+      .meta {
+        @include padding($left: 2rem, $right: 2rem);
+      }
+
+      h1 {
+        &.headline {
+          @include padding($left: 2rem, $right: 2rem);
+        }
+      }
+
+      section {
+        &.body {
+          @include padding($top: 2rem, $bottom: 1rem);
+        }
+      }
+    }
+  }
+}

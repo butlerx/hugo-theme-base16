@@ -1,0 +1,16 @@
+footer {
+  @include pageBase;
+  @include margin($bottom: 1rem, $top: 2rem);
+  color: base('03');
+  font-size: 0.9em;
+  text-align: center;
+
+  a {
+    color: base('03');
+    text-decoration: none;
+  }
+
+  @media (breakpoint-md) {
+    @include margin($bottom: 0, $top: 0);
+  }
+}

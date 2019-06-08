@@ -1,0 +1,26 @@
+@import 'variables', '404', 'article', 'code', 'footer', 'header', 'homepage',
+  'nav', 'search', 'typography';
+
+body {
+  background-color: base('00');
+  color: base('07');
+  font-family: $fonts;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.container {
+  @include responsive;
+  @include margin($left: auto, $right: auto);
+}
+
+div {
+  &.right {
+    float: right;
+  }
+
+  &.clearfix {
+    overflow: auto;
+  }
+}

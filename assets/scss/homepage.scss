@@ -1,0 +1,56 @@
+@import 'colours';
+
+.homepage {
+  @media (breakpoint-md) {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    &.site-title {
+      color: base('0c');
+      font-size: 5em;
+      text-align: center;
+      @media (breakpoint-md) {
+        font-size: 3em;
+      }
+    }
+
+    &.headline {
+      color: base('0a');
+      font-size: 3em;
+      @media (breakpoint-md) {
+        @include padding($left: 2rem, $right: 2rem);
+      }
+    }
+  }
+
+  .hero-logo {
+    background: drawPalette(map-values($base));
+    height: 3em;
+    margin: 1em 0;
+  }
+
+  section {
+    &.categories,
+    &.tags {
+      @include padding($left: 2rem, $right: 2rem);
+    }
+  }
+
+  .category {
+    color: base('0e');
+
+    a {
+      color: base('0e');
+    }
+  }
+
+  .tag {
+    color: base('0e');
+    margin-right: 2em;
+
+    a {
+      color: base('0e');
+    }
+  }
+}

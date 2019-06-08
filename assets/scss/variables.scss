@@ -1,0 +1,53 @@
+$fonts: 'Source Code Pro', monospace;
+$max-width: 52em;
+
+@custom-media breakpoint-md (max-width: $max-width);
+
+$base: (
+  '00': #2d2d2d,
+  '01': #393939,
+  '02': #515151,
+  '03': #747369,
+  '04': #a09f93,
+  '05': #d3d0c8,
+  '06': #e8e6df,
+  '07': #f2f0ec,
+  '08': #f2777a,
+  '09': #f99157,
+  '0a': #fc6,
+  '0b': #9c9,
+  '0c': #6cc,
+  '0d': #69c,
+  '0e': #c9c,
+  '0f': #d27b53,
+);
+
+@function base($num) {
+  @return map-get($base, $num);
+}
+
+@mixin responsive {
+  max-width: $max-width;
+  @media (breakpoint-md) {
+    width: 100%;
+  }
+}
+
+@mixin padding($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  padding-bottom: $bottom;
+  padding-left: $left;
+  padding-right: $right;
+  padding-top: $top;
+}
+
+@mixin margin($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  margin-bottom: $bottom;
+  margin-left: $left;
+  margin-right: $right;
+  margin-top: $top;
+}
+
+@mixin pageBase {
+  @include padding($bottom: 1rem, $top: 1rem);
+  background-color: base('01');
+}

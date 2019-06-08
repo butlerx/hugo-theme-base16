@@ -39,7 +39,7 @@ function executeSearch(searchQuery) {
 
 function populateResults(result) {
   $.each(result, (key, value) => {
-    const contents = value.item.contents;
+    const { contents } = value.item;
     let snippet = '';
     const snippetHighlights = [];
     if (fuseOptions.tokenize) {
@@ -49,18 +49,14 @@ function populateResults(result) {
         if (mvalue.key === 'tags' || mvalue.key === 'categories') {
           snippetHighlights.push(mvalue.value);
         } else if (mvalue.key === 'contents') {
-          const start =
-            mvalue.indices[0][0] - summaryInclude > 0 ? mvalue.indices[0][0] - summaryInclude : 0;
+          const start = mvalue.indices[0][0] - summaryInclude > 0 ? mvalue.indices[0][0] - summaryInclude : 0;
           const end =
             mvalue.indices[0][1] + summaryInclude < contents.length
               ? mvalue.indices[0][1] + summaryInclude
               : contents.length;
           snippet += contents.substring(start, end);
           snippetHighlights.push(
-            mvalue.value.substring(
-              mvalue.indices[0][0],
-              mvalue.indices[0][1] - mvalue.indices[0][0] + 1,
-            ),
+            mvalue.value.substring(mvalue.indices[0][0], mvalue.indices[0][1] - mvalue.indices[0][0] + 1),
           );
         }
       });
@@ -91,10 +87,7 @@ function populateResults(result) {
 }
 
 function param(name) {
-  return decodeURIComponent((location.search.split(`${name}=`)[1] || '').split('&')[0]).replace(
-    /\+/g,
-    ' ',
-  );
+  return decodeURIComponent((location.search.split(`${name}=`)[1] || '').split('&')[0]).replace(/\+/g, ' ');
 }
 
 function render(templateString, data) {

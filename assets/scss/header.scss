@@ -1,0 +1,21 @@
+header {
+  @include pageBase;
+  @include margin($bottom: 2rem, $top: 1rem);
+
+  a {
+    &.path {
+      color: base('0d');
+    }
+  }
+
+  span {
+    &.caret {
+      color: base('07');
+    }
+  }
+
+  @media (breakpoint-md) {
+    @include padding($left: 2rem, $right: 2rem);
+    margin-top: 0;
+  }
+}

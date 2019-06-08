@@ -1,0 +1,23 @@
+nav {
+  &.paginator {
+    text-align: center;
+
+    a {
+      color: base('0e');
+    }
+
+    .faded {
+      color: base('02');
+    }
+
+    .nav-left {
+      margin-left: auto;
+      margin-right: 1%;
+    }
+
+    .nav-right {
+      margin-left: 1%;
+      margin-right: auto;
+    }
+  }
+}
