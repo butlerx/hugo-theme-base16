@@ -2,7 +2,7 @@
 
 base 16 colour scheme for for hugo blog
 
-![Base16](https://github.com/butlerx/hugo-theme-base16/blob/master/screenshot.png?raw=true)
+![Base16](https://github.com/butlerx/hugo-theme-base16/blob/master/images/screenshot.png?raw=true)
 
 **DEMO** - https://admins.redbrick.dcu.ie/
 
@@ -10,6 +10,7 @@ base 16 colour scheme for for hugo blog
 - [Code highlighting](#code-highlighting)
 - [How to start](#how-to-start)
 - [How to configure](#how-to-configure)
+- [Hot to enable Search](#enable-search)
 - [Post archetype](#post-archetype)
 - [Licence](#licence)
 
@@ -80,6 +81,17 @@ paginate = 5
 ```
 
 to `config.toml` file in your Hugo root directory and change params fields
+
+## Enable Search
+
+To enable search add create the `search.md` from the search archtype by running
+`hugo new --kind search search.md`. Then add `JSON` to the output of `home` in
+`config.toml` as
+
+```toml
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+```
 
 ## Post archetype
 

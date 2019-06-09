@@ -6,7 +6,7 @@ pygmentsCodeFences = true
 paginate = 5
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "json"]
 
 [params]
   hero = "Base16"
