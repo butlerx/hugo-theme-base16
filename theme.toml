@@ -1,0 +1,12 @@
+name = "Base16"
+license = "MIT"
+licenselink = "https://github.com/butlerx/hugo-theme-base16/blob/master/LICENSE"
+description = "Base16 theme for hugo blogs"
+homepage = "https://github.com/butlerx/hugo-theme-base16"
+tags = ['monospace', 'base16', 'terminal', 'code', 'blog']
+features = ["blog", "syntax highlighting"]
+min_version = "0.41"
+
+[author]
+  name = "butlerx"
+  homepage = "https://cianbutler.ie"

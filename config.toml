@@ -1,14 +1,15 @@
-baseURL = "https://admins.redbrick.dcu.ie/"
+baseurl = "/"
 languageCode = "en-us"
-title = "Redbrick Admin Blog"
-author = "Redbrick Admin"
+title = "Blog Title"
+author = "Authors Name"
 pygmentsCodeFences = true
+paginate = 5
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
 [params]
-  hero = "root@rb"
-  message = "FIX IT!!! FIX IT !!! FIX ITTTTTT!!!!!!!!!"
-  descriptions = "Tales of fail from Redbrick admins"
-  twitter = "RedbrickDCU"
+  hero = "Base16"
+  message = "Sub Title message"
+  descriptions = "Blog description"
+  twitter = "twitter user"
