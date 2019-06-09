@@ -1,0 +1,12 @@
+{
+  "name": "{{ .Site.Title }}",
+  "short_name": "{{ .Site.Params.hero }}",
+  "start_url": "/",
+  "theme_color": "#d3d0c8",
+  "background_color": "#2d2d2d",
+  "display": "standalone",
+  "default_locale": "en",
+  "description": "{{ .Site.Params.description }}",
+  "author": "{{ .Site.Params.author }}",
+  "manifest_version": 2
+}

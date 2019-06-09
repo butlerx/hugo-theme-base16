@@ -3,11 +3,10 @@
     <a class="path" href="{{ .Site.BaseURL }}">[{{ .Site.Title }}]</a>
     <span class="caret">#_</span>
     <div class="right">
-      {{ range $i, $page := (where .Site.Pages "Section" "pages") }}
+      {{ range $i, $page := (where .Site.RegularPages "Section" "!=" "post") }}
         {{ if not (eq $i 0) }}|{{ end }}
         <a class="path" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
       {{ end }}
-      <a class="path" href="{{ .Site.BaseURL }}search">/Search</a>
     </div>
   </div>
 </header>
