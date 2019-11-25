@@ -3,7 +3,7 @@
   <main role="main" class="homepage">
     {{ partial "hero.html" . }}
     <h1 class="headline">Recent Posts</h1>
-    {{ $paginator := .Paginate .Site.RegularPages 5 }}
+    {{ $paginator := .Paginate (where .Site.RegularPages "Section" "post") 5 }}
     <div class="article-list">
       {{ range $paginator.Pages }}
         {{ partial "article-list-item.html" . }}
