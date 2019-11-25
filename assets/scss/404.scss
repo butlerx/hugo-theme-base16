@@ -1,4 +1,12 @@
 .page-not-found {
+  @include breakpointMd {
+    @each $level, $size in ('h1': 3em, 'h2': 2em) {
+      h#{$level} {
+        font-size: $size;
+      }
+    }
+  }
+
   h1 {
     font-size: 5em;
     text-align: center;
@@ -9,13 +17,5 @@
     color: base('04');
     font-size: 3em;
     text-align: center;
-  }
-
-  @media (breakpoint-md) {
-    @each $level, $size in ('h1': 3em, 'h2': 2em) {
-      h#{$level} {
-        font-size: $size;
-      }
-    }
   }
 }

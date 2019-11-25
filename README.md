@@ -46,7 +46,7 @@ pasting it to `themes/terminal` in your root directory.
 You can also clone it directly to your Hugo folder:
 
 ```sh
-git clone https://github.com/bulerx/hugo-theme-base16.git themes/terminal
+git clone https://github.com/bulerx/hugo-theme-base16.git themes/base16
 ```
 
 If you don't want to make any radical changes, it's the best option, because you
@@ -54,7 +54,7 @@ can get new updates when they are available. You can also include it as a git
 submodule:
 
 ```sh
-git submodule add https://github.com/bulerx/hugo-theme-base16.git themes/terminal
+git submodule add https://github.com/bulerx/hugo-theme-base16.git themes/base16
 ```
 
 ## How to configure

@@ -1,7 +1,17 @@
 $fonts: 'Source Code Pro', monospace;
 $max-width: 52em;
 
-@custom-media breakpoint-md (max-width: $max-width);
+@mixin breakpointMd {
+  @media (max-width: #{$max-width}) {
+    @content;
+  }
+}
+
+@mixin breakpointLg {
+  @media (min-width: 60em) {
+    @content;
+  }
+}
 
 $base: (
   '00': #2d2d2d,
@@ -27,13 +37,20 @@ $base: (
 }
 
 @mixin responsive {
-  max-width: $max-width;
-  @media (breakpoint-md) {
+  @include breakpointMd {
     width: 100%;
+  }
+  @include breakpointLg {
+    max-width: 90%;
+  }
+
+  max-width: $max-width;
+  @media (min-width: 82em) {
+    max-width: 76em;
   }
 }
 
-@mixin padding($top: auto, $right: auto, $bottom: auto, $left: auto) {
+@mixin padding($top: 2rem, $right: 2rem, $bottom: 2rem, $left: 2rem) {
   padding-bottom: $bottom;
   padding-left: $left;
   padding-right: $right;

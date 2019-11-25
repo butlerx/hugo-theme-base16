@@ -1,26 +1,26 @@
 @import 'colours';
 
 .homepage {
-  @media (breakpoint-md) {
+  @include breakpointMd {
     margin-bottom: 2rem;
   }
 
   h1 {
     &.site-title {
+      @include breakpointMd {
+        font-size: 3em;
+      }
       color: base('0c');
       font-size: 5em;
       text-align: center;
-      @media (breakpoint-md) {
-        font-size: 3em;
-      }
     }
 
     &.headline {
-      color: base('0a');
-      font-size: 3em;
-      @media (breakpoint-md) {
+      @include breakpointMd {
         @include padding($left: 2rem, $right: 2rem);
       }
+      color: base('0a');
+      font-size: 3em;
     }
   }
 

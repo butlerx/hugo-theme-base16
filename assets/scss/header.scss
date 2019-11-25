@@ -14,7 +14,7 @@ header {
     }
   }
 
-  @media (breakpoint-md) {
+  @include breakpointMd {
     @include padding($left: 2rem, $right: 2rem);
     margin-top: 0;
   }

@@ -1,11 +1,11 @@
 @mixin articleLayout {
+  @include breakpointMd {
+    @include padding($left: 2rem, $right: 2rem);
+  }
+
   background-color: base('07');
   color: base('00');
   padding: 1rem 8rem;
-
-  @media (breakpoint-md) {
-    @include padding($left: 2rem, $right: 2rem);
-  }
 }
 
 .article-list {

@@ -3,14 +3,14 @@
 @mixin highlight {
   @include responsive;
   @include margin($bottom: 1rem, $left: -8rem, $right: -8rem);
+  @include margin($left: 0, $right: 0);
+  @include breakpointMd {
+    border-radius: 3px;
+  }
   background-color: base('01');
   box-sizing: border-box;
   padding: 1em;
   width: 52rem;
-  @media (breakpoint-md) {
-    @include margin($left: 0, $right: 0);
-    border-radius: 3px;
-  }
 }
 
 @mixin tableCell {
@@ -42,7 +42,7 @@ article {
     h1 {
       &.headline {
         color: base('0a');
-        font-size: 3em;
+        font-size: 2em;
         margin-top: 0;
       }
     }
@@ -157,7 +157,7 @@ article {
       border-bottom: 1px solid base('04');
     }
 
-    @media (breakpoint-md) {
+    @include breakpointMd {
       .meta {
         @include padding($left: 2rem, $right: 2rem);
       }
